@@ -16,9 +16,6 @@ function returnFirstArgument(data) {
     return data;
 }
 
-returnFirstArgument("Привет");
-
-
 /*
  Задание 2:
 
@@ -37,8 +34,6 @@ function sumWithDefaults(a, b = 100) {
     return a + b;
 }
 
-sumWithDefaults(20);
-
 /*
  Задание 3:
 
@@ -50,7 +45,6 @@ sumWithDefaults(20);
 function returnFnResult(fn) {
     return fn();
 }
-returnFnResult(() => 'Как дела?');
 
 /*
  Задание 4:
@@ -65,20 +59,12 @@ returnFnResult(() => 'Как дела?');
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-let f = returnCounter();
 
 function returnCounter(number = 0) {
     return function F() {
         return ++number;
     }
 }
-
-console.log(f());
-console.log(f());
-console.log(f());
-
-
-
 
 /*
  Задание 5 *:
@@ -92,7 +78,6 @@ console.log(f());
 function returnArgumentsArray(...args) {
     return args;
 }
-returnArgumentsArray(1, 2, 3);
 
 /*
  Задание 6 *:
@@ -109,15 +94,18 @@ returnArgumentsArray(1, 2, 3);
 
    console.log(newSum()) выведет 6
  */
-function F() {
-    
-}
-function bindFunction(fn, a ,b) {
-    
-}
-bindFunction(F);
 
+function bindFunction(fn) {
+    
+    var args = '';
 
+    for (var i = 1; i < arguments.length; i++) {
+        args += arguments[i];
+    }
+    var func = fn.bind(null, args);
+
+    return func;
+}
 
 export {
     returnFirstArgument,
