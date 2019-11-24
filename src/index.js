@@ -82,7 +82,6 @@ function isSomeTrue(array, fn) {
  */
 function returnBadArguments(fn, ...more) {
     let result = [];
-    let a = '';
 
     if (typeof fn != 'function') {
         throw new Error('fn is not a function');
@@ -91,7 +90,7 @@ function returnBadArguments(fn, ...more) {
     } else {
         for (let i = 0; i < more.length; i++) {
             try {
-                a = fn(more[i]);
+                fn(more[i]);
             } catch (e) {
                 result.push(more[i]);
             }
@@ -126,9 +125,7 @@ function calculator(number = 0) {
     let obj = {
         sum: function () {
             for (let i = 0; i < arguments.length; i++) {
-                if (arguments[i] === 0) {
-                    throw new Error('division by 0');
-                }
+
                 number += arguments[i];
             }
 
@@ -136,9 +133,7 @@ function calculator(number = 0) {
         },
         dif: function () {
             for (let i = 0; i < arguments.length; i++) {
-                if (arguments[i] === 0) {
-                    throw new Error('division by 0');
-                }
+
                 number -= arguments[i];
             }
 
@@ -156,9 +151,7 @@ function calculator(number = 0) {
         },
         mul: function () {
             for (let i = 0; i < arguments.length; i++) {
-                if (arguments[i] === 0) {
-                    throw new Error('division by 0');
-                }
+
                 number *= arguments[i];
             }
 
