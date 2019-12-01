@@ -64,6 +64,7 @@ function findAllPSiblings(where) {
 
     return arr;
 }
+
 /*
  Задание 4:
 
@@ -160,7 +161,9 @@ function deleteTextNodesRecursive(where) {
      texts: 3
    }
  */
-function collectDOMStat(root) {}
+function collectDOMStat(root) {
+
+}
 
 /*
  Задание 8 *:
@@ -194,7 +197,8 @@ function collectDOMStat(root) {}
      nodes: [div]
    }
  */
-function observeChildNodes(where, fn) {}
+function observeChildNodes(where, fn) {
+}
 
 export {
     createDivWithText,
