@@ -85,8 +85,9 @@ function once(target, fn) {
         if (res) {
             fn();
             res = false;
+        } else {
+            target.removeEventListener('click', e => e);
         }
-        target.removeEventListener('click', e => e);
     });
 }
 
