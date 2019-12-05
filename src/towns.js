@@ -84,13 +84,31 @@ loadTowns()
         cities = res;
         loadingBlock.style.display = 'none';
         filterBlock.style.display = 'block';
-    });
+    })
+    .catch(() => {
+        loadingBlock.textContent = 'Не удалось загрузить города';
+        const button = document.createElement('button');
+
+        button.textContent = 'Повторить';
+        homeworkContainer.append(button);
+        button.addEventListener('click', () => {
+            loadTowns();
+        });
+    })
 
 filterInput.addEventListener('keyup', function () {
     if (filterInput.value) {
-        filterResult.innerHTML = cities
+        cities
             .filter(item => isMatching(item.name, filterInput.value))
-            .map(item => item.name).join(', ');
+            .map(item => {
+                const div = document.createElement('div');
+
+                div.textContent = item.name;
+                filterResult.append(div);
+                
+                return item.name;
+            })
+
     } else {
         filterResult.innerHTML = '';
     }
