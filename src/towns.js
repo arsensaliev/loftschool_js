@@ -97,6 +97,7 @@ loadTowns()
     })
 
 filterInput.addEventListener('keyup', function () {
+    filterResult.innerHTML = '';
     if (filterInput.value) {
         cities
             .filter(item => isMatching(item.name, filterInput.value))
@@ -109,8 +110,6 @@ filterInput.addEventListener('keyup', function () {
                 return item.name;
             })
 
-    } else {
-        filterResult.innerHTML = '';
     }
 });
 
