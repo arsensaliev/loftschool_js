@@ -1,9 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>{{htmlWebpackPlugin.options.title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.5.3/handlebars.js"></script>
+  <title>Yandex API</title>
 </head>
+
 <body>
+
+
+  <div class="banner hide">
+    <div class="banner-address">
+      <span class="banner-address__info"></span>
+      <button class="close-button"></button>
+    </div>
+    <div class="banner-comment">
+      
+    </div>
+    <hr>
+    <div class="banner-feedback">
+      <h3>Ваш отзыв</h3>
+      <input type="text" class="banner-feedback__name" placeholder="Ваше имя">
+      <input type="text" class="banner-feedback__place" placeholder="Укажите место">
+      <textarea name="" id="" cols="30" rows="10" maxlength="200" class="banner-feedback__comment"
+        placeholder="Поделитесь впечатлениями"></textarea>
+      <button class="banner-feedback__share">Добавить</button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="map" class="map"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=a4d6f67c-4454-4d6e-ac89-53889089b6a3&lang=ru_RU"
+    type="text/javascript">
+    </script>
 </body>
+
 </html>
